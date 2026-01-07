@@ -1,0 +1,130 @@
+/* ===== Body ===== */
+body {
+  display: flex;                 /* Flexbox for å sentrere main */
+  justify-content: center;       /* Sentrer horisontalt */
+  align-items: center;           /* Sentrer vertikalt */
+  min-height: 100vh;             /* Full høyde på skjermen */
+  font-family: Arial, sans-serif; /* Font */
+  background-color: #f5f5f5;     /* Lys bakgrunn */
+  margin: 0;                     /* Fjern default margin */
+}
+
+/* ===== Main container ===== */
+main {
+  background-color: #fff;        /* Hvit boks */
+  padding: 20px 30px;            /* Innvendig padding */
+  border-radius: 10px;           /* Runde hjørner */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Myk skygge */
+  width: 400px;                  /* Bredde på desktop */
+  display: flex;                 /* Flexbox */
+  flex-direction: column;        /* Stable elementer vertikalt */
+}
+
+/* ===== Overskrift ===== */
+h1 {
+  text-align: center;            /* Sentrer teksten */
+  margin-bottom: 20px;           /* Avstand under */
+}
+
+/* ===== Input container ===== */
+.input-container {
+  display: flex;                 /* Flexbox */
+  gap: 5px;                      /* Litt mellomrom mellom elementer */
+  margin-bottom: 10px;           /* Avstand under input */
+}
+
+/* Input tekstfelt */
+.input-container input {
+  flex: 1;                       /* Tar all tilgjengelig plass */
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Dropdown for prioritet */
+.input-container select {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* Legg til-knapp */
+.input-container button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.input-container button:hover { background-color: #45a049; }
+
+/* ===== Liste ===== */
+ul {
+  list-style-type: none;         /* Fjern punkter */
+  padding: 0;
+  margin: 10px 0;
+}
+
+/* Liste-elementer */
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ===== Prioritet-farger ===== */
+ul li.low { border-left: 5px solid green; }
+ul li.medium { border-left: 5px solid orange; }
+ul li.high { border-left: 5px solid red; }
+
+/* ===== Ferdig / valgt / rediger ===== */
+ul li.ferdig { text-decoration: line-through; color: #888; }
+ul li.valgt { background-color: #d0f0c0; }
+ul li.editing { background-color: #fff3cd; }
+
+/* Redigeringsmodus input */
+ul li.editing input { width: 70%; padding: 4px; margin-right: 5px; }
+ul li.editing button { width: auto; padding: 4px 6px; }
+
+/* ===== Kontrollknapper ===== */
+.button-container {
+  display: flex;                /* Flex for knapper */
+  gap: 5px;                     /* Mellomrom mellom knapper */
+  margin-top: 10px;
+}
+
+.button-container button {
+  flex: 1;                      /* Alle knapper lik bredde */
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;                /* Flex for ikon + tekst */
+  align-items: center;
+  justify-content: center;
+  gap: 5px;                     /* Mellom ikon og tekst */
+}
+
+#delete-button { background-color: red; }
+#delete-button:hover { background-color: darkred; }
+#delete-finished { background-color: orange; }
+#delete-finished:hover { background-color: darkorange; }
+#sort-button { background-color: #007BFF; }
+#sort-button:hover { background-color: #0056b3; }
+
+/* ===== Responsive design ===== */
+@media (max-width: 500px) {
+  main { width: 90%; padding: 15px; }       /* Tilpass container */
+  .input-container, .button-container { flex-direction: column; } /* stable på mobil */
+  input, select, button { font-size: 14px; padding: 6px; }        /* mindre elementer */
+  ul li { font-size: 14px; padding: 6px; }                        /* mindre liste */
+  ul li.editing input { width: 60%; }                              /* rediger input mindre */
+}

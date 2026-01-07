@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8"> 
+  <!-- Meta charset setter tegnsett til UTF-8 slik at norske bokstaver fungerer -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Responsivt design: gjør at siden tilpasser seg mobil/skjermbredde -->
+
+  <title>Proff To-Do-liste</title>
+  <!-- Tittel som vises i nettleserfanen -->
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Linker til ekstern CSS-fil -->
+
+  <script src="https://unpkg.com/lucide/dist/lucide.min.js"></script>
+  <!-- Libray for ikoner (trash, save, sort etc.) -->
+</head>
+<body>
+
+<main>
+  <!-- Main container for appen -->
+
+  <h1>Min To-Do-liste</h1>
+  <!-- Overskrift -->
+
+  <!-- Input + legg til + prioritet -->
+  <div class="input-container">
+    <input type="text" id="todo-input" placeholder="Skriv ny oppgave...">
+    
+    <!-- Input-felt for oppgavetekst -->
+
+    <select id="priority">
+      <option value="low">Lav</option>
+      <option value="medium">Medium</option>
+      <option value="high">Høy</option>
+    </select>
+    <!-- Dropdown for prioritet -->
+
+    <button type="button" id="add-button">Legg til</button>
+    <!-- Knapp for å legge til oppgaven -->
+  </div>
+  
+
+  <!-- Liste over oppgaver -->
+  <ul></ul>
+  <!-- Oppgaver legges her dynamisk via JS -->
+
+  <!-- Kontrollknapper -->
+  <div class="button-container">
+    <button id="delete-button">
+      <i data-lucide="trash-2"></i> Slett valgt
+    </button>
+    <!-- Slett den oppgaven som er markert -->
+
+    <button id="delete-finished">
+      <i data-lucide="trash"></i> Slett ferdige
+    </button>
+    <!-- Sletter alle oppgaver som er ferdige -->
+
+    <button id="sort-button">
+      <i data-lucide="arrow-up-down"></i> Sorter
+    </button>
+    <!-- Toggle-sortering: ferdige først / uferdige først -->
+  </div>
+</main>
+
+<script src="script.js"></script>
+<!-- Linker til JS som gjør alt dynamisk -->
+
+<script>
+  lucide.createIcons(); 
+  <!-- Tegner ikonene fra Lucide-biblioteket -->
+</script>
+
+</body>
+</html>
